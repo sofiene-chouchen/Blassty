@@ -11,13 +11,17 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @unique
+  id       Int    @id @unique @default(autoincrement())
   name     String
   email    String
   password String
 }
 
 model Parking {
-  id   Int    @id @unique
-  name String
+  id      Int    @id @unique @default(autoincrement())
+  name    String @unique
+  lat     Float
+  long    Float
+  price   Float
+  nbPlace Int
 }
