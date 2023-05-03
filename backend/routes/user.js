@@ -29,5 +29,8 @@ router.post("/login", async (req, res) => {
   }
   res.status(200).send(user);
 });
-
+router.delete("/", async (req, res) => {
+  const deleteData = await prisma.user.deleteMany();
+  res.send("data deleted").status(200);
+});
 module.exports = router;

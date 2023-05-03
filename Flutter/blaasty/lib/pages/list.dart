@@ -64,7 +64,40 @@ class _ListState extends State<List> {
               ),
               Expanded(
                   child: TabBarView(
-                children: [Text("List"), Text("Map")],
+                children: [
+                  ListView(
+                    children: [
+                      Container(
+                        height: 100,
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+
+                      Container(
+                        height: 100,
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Container(
+                        height: 100,
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text("Map")
+                ],
               ))
             ],
           ),
