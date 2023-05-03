@@ -20,6 +20,9 @@ class _LoginState extends State<Login> {
               child: Image.asset("images/BlastyyLogo.jpeg"),
             ),
           ),
+          SizedBox(
+            height: 30,
+          ),
           Form(
               child: Column(
             children: [
@@ -34,7 +37,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   obscureText: true,
                   decoration: const InputDecoration(
@@ -44,11 +47,14 @@ class _LoginState extends State<Login> {
                           borderRadius: BorderRadius.all(Radius.circular(10)))),
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 child: Row(
                   children: [
                     const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10)),
+                        padding: EdgeInsets.only(left: 30, bottom: 10)),
                     const Text("Do you Not Have Acount ?"),
                     GestureDetector(
                       onTap: () {
@@ -64,10 +70,16 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 12,
+              ),
               Container(
-                  margin: const EdgeInsets.only(top: 10),
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text("LogIn "))),
+                      onPressed: () {},
+                      child: const Text(
+                        "Login ",
+                        style: TextStyle(fontSize: 18),
+                      ))),
             ],
           ))
         ],

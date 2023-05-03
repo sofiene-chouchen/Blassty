@@ -13,7 +13,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(top: 90),
+          margin: EdgeInsets.only(top: 100),
           child: Column(
             children: [
               Center(
@@ -22,11 +22,14 @@ class _SignUpState extends State<SignUp> {
                   child: Image.asset("images/BlastyyLogo.jpeg"),
                 ),
               ),
+              SizedBox(
+                height: 50,
+              ),
               Form(
                   child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       decoration: const InputDecoration(
                           labelText: "username",
@@ -36,8 +39,11 @@ class _SignUpState extends State<SignUp> {
                                   BorderRadius.all(Radius.circular(10)))),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    margin: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       decoration: const InputDecoration(
                           labelText: "E-mail",
@@ -63,7 +69,7 @@ class _SignUpState extends State<SignUp> {
                     child: Row(
                       children: [
                         const Padding(
-                            padding: EdgeInsets.only(left: 20, bottom: 10)),
+                            padding: EdgeInsets.only(left: 30, bottom: 10)),
                         const Text("Do you  Have Acount ?"),
                         GestureDetector(
                           onTap: () {
@@ -72,6 +78,7 @@ class _SignUpState extends State<SignUp> {
                           child: const Text(
                             "Login ",
                             style: TextStyle(
+                                fontSize: 16,
                                 color: Colors.blue,
                                 decoration: TextDecoration.underline),
                           ),
@@ -79,10 +86,17 @@ class _SignUpState extends State<SignUp> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                       margin: const EdgeInsets.only(top: 10),
                       child: ElevatedButton(
-                          onPressed: () {}, child: const Text("Register "))),
+                          onPressed: () {},
+                          child: const Text(
+                            "Register ",
+                            style: TextStyle(fontSize: 18),
+                          ))),
                 ],
               ))
             ],

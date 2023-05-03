@@ -16,5 +16,18 @@ router.post("/", async (req, res) => {
   });
   res.status(201).send(user);
 });
+router.post("/login", async (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  const user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    return res.status(401).send({ message: "Invalid email or password" });
+  }
+  const passwordMatch = password === user.password;
+  if (!passwordMatch) {
+    return res.status(401).send({ message: "Invalid email or password" });
+  }
+  res.status(200).send(user);
+});
 
 module.exports = router;
