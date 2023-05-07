@@ -1,9 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.blaasty">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
    <application
         android:label="blaasty"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+         <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyD8z0K9uyCVKPPm_1pVQ2LwOK9zVFCq9YY"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

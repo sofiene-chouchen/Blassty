@@ -13,10 +13,11 @@ route.post("/", async (req, res) => {
       lat: req.body.lat,
       long: req.body.long,
       price: req.body.price,
-      nbPlace: req.body.place,
+      nbPlace: req.body.nbPlace,
+      description: req.body.description,
     },
   });
-  res.status(201).status("created");
+  res.status(201).send("created");
 });
 
 route.get("/", async (req, res) => {

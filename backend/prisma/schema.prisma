@@ -18,10 +18,11 @@ model User {
 }
 
 model Parking {
-  id      Int    @id @unique @default(autoincrement())
-  name    String @unique
-  lat     Float
-  long    Float
-  price   Float
-  nbPlace Int
+  id          Int    @id @unique @default(autoincrement())
+  name        String @unique
+  lat         Float
+  long        Float
+  price       Float
+  nbPlace     Float
+  description String
 }

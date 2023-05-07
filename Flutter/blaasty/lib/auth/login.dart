@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
 
-
 class Login extends StatefulWidget {
   const Login({Key? key});
 
@@ -109,7 +108,7 @@ class _LoginState extends State<Login> {
                               body: jsonEncode(
                                   {'email': email, 'password': password}));
                           if (response.statusCode == 200) {
-                             Fluttertoast.showToast(
+                            Fluttertoast.showToast(
                                 msg: "Welcome ",
                                 toastLength: Toast.LENGTH_SHORT,
                                 gravity: ToastGravity.BOTTOM,
