@@ -102,7 +102,8 @@ class _LoginState extends State<Login> {
                           final password = _passwordController.text;
 
                           final url =
-                              Uri.parse("http://192.168.1.17:5000/user/login");
+                              // Uri.parse("http://192.168.1.17:5000/user/login");
+                              Uri.parse("http://10.99.8.34:5000/user/login");
                           final response = await http.post(url,
                               headers: {"content-Type": 'application/json'},
                               body: jsonEncode(
