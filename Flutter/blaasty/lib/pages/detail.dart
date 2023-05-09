@@ -144,7 +144,17 @@ class _DetailState extends State<Detail> {
             ),
             Container(
               margin: EdgeInsets.only(top: 20, left: 50),
-              child: ElevatedButton(onPressed: () {}, child: Text("Reserver")),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/next_screen',
+                      arguments: {
+                        'hours': int.parse(_hoursController.text.trim())
+                      },
+                    );
+                  },
+                  child: Text("Reserver")),
             )
           ],
         ));
