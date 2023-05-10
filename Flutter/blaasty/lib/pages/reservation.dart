@@ -36,14 +36,23 @@ class _ReservationState extends State<Reservation> {
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Text code: $textCode", style: TextStyle(fontSize: 20)),
-          SizedBox(height: 20),
-          Text(
-              "Current time: ${DateFormat("yyyy-MM-dd HH:mm:ss").format(currentTime)}",
-              style: TextStyle(fontSize: 20)),
-          SizedBox(height: 20),
+          Column(
+            children: [
+              Container(
+              margin: EdgeInsets.only(top:20 , left: 40),
+                child: Text("Text code: $textCode", style: TextStyle(fontSize: 20))),
+            ],
+          ),
+          SizedBox(height: 50),
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Text(
+                "Current time: ${DateFormat("yyyy-MM-dd HH:mm:ss").format(currentTime)}",
+                style: TextStyle(fontSize: 20)),
+          ),
+          SizedBox(height: 40),
           Text("End time: ${DateFormat("yyyy-MM-dd HH:mm:ss").format(endTime)}",
               style: TextStyle(fontSize: 20)),
         ],

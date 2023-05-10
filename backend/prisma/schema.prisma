@@ -6,19 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id       Int    @id @unique @default(autoincrement())
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   email    String @unique
   password String
 }
 
 model Parking {
-  id          Int    @id @unique @default(autoincrement())
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
   name        String @unique
   lat         Float
   long        Float

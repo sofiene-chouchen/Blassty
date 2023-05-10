@@ -89,8 +89,8 @@ class _ListState extends State<List> {
       zoom: 10);
 
   Future GetParking() async {
-    var url = Uri.parse("http://192.168.1.17:5000/parking");
-    // var url = Uri.parse("http://10.99.8.34:5000/parking");
+    // var url = Uri.parse("http://192.168.1.17:5000/parking");
+    var url = Uri.parse("http://10.99.8.34:5000/parking");
     var response = await http.get(url);
     var responseBody = jsonDecode(response.body);
 

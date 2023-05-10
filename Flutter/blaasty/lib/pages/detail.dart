@@ -61,7 +61,7 @@ class _DetailState extends State<Detail> {
                       Container(
                           margin: EdgeInsets.only(top: 60, left: 60),
                           width: 300,
-                          height: 300,
+                          height: 250,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               boxShadow: [BoxShadow(blurRadius: 6)],
@@ -99,9 +99,8 @@ class _DetailState extends State<Detail> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.location_on_outlined),
                                       Text(args['nbPlace'].toString() +
-                                          'place disponible'),
+                                          ' place disponible'),
                                     ],
                                   ),
                                 ),
@@ -119,7 +118,6 @@ class _DetailState extends State<Detail> {
                                         child: TextField(
                                           controller: _hoursController,
                                           decoration: InputDecoration(
-                                            hintText: 'Enter hours',
                                             border: OutlineInputBorder(),
                                           ),
                                           keyboardType: TextInputType.number,
@@ -131,8 +129,8 @@ class _DetailState extends State<Detail> {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Text('Total : $_totalPrice'),
+                                  margin: EdgeInsets.only(top: 20),
+                                  child: Text('Total : $_totalPrice DT' , style: TextStyle(fontSize: 16),),
                                 ),
                               ],
                             ),
