@@ -32,6 +32,7 @@ class _ReservationState extends State<Reservation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple,
         title: Text("Reservation"),
         centerTitle: true,
       ),
@@ -41,8 +42,9 @@ class _ReservationState extends State<Reservation> {
           Column(
             children: [
               Container(
-              margin: EdgeInsets.only(top:20 , left: 40),
-                child: Text("Text code: $textCode", style: TextStyle(fontSize: 20))),
+                  margin: EdgeInsets.only(top: 20, left: 40),
+                  child: Text("Text code: $textCode",
+                      style: TextStyle(fontSize: 20))),
             ],
           ),
           SizedBox(height: 50),

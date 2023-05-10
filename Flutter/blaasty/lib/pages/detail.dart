@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
 class Detail extends StatefulWidget {
@@ -47,6 +48,7 @@ class _DetailState extends State<Detail> {
 
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.purple,
           title: Text('Reservation'),
           centerTitle: true,
         ),
@@ -61,7 +63,7 @@ class _DetailState extends State<Detail> {
                       Container(
                           margin: EdgeInsets.only(top: 60, left: 60),
                           width: 300,
-                          height: 250,
+                          height: 200,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               boxShadow: [BoxShadow(blurRadius: 6)],
@@ -108,29 +110,7 @@ class _DetailState extends State<Detail> {
                                   height: 20,
                                 ),
                                 Container(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width: 60,
-                                        height: 40,
-                                        margin: EdgeInsets.only(right: 10),
-                                        child: TextField(
-                                          controller: _hoursController,
-                                          decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
-                                          ),
-                                          keyboardType: TextInputType.number,
-                                          onChanged: (_) => _calculateTotal(),
-                                        ),
-                                      ),
-                                      Text('${args['price']}dt/H'),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 20),
-                                  child: Text('Total : $_totalPrice DT' , style: TextStyle(fontSize: 16),),
+                                  child: Text('${args['price']}dt/H'),
                                 ),
                               ],
                             ),
@@ -143,14 +123,23 @@ class _DetailState extends State<Detail> {
             Container(
               margin: EdgeInsets.only(top: 20, left: 50),
               child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Colors.purple)),
                   onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/next_screen',
-                      arguments: {
-                        'hours': int.parse(_hoursController.text.trim())
-                      },
-                    );
+                    AwesomeDialog(
+                      context: context,
+                      animType: AnimType.scale,
+                      dialogType: DialogType.info,
+                      body: Center(
+                        child: Text(
+                          "Reserved",
+                          style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      title: 'This is Ignored',
+                      desc: 'This is also Ignored',
+                      btnOkOnPress: () {},
+                    )..show();
                   },
                   child: Text("Reserver")),
             )

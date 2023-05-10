@@ -24,12 +24,12 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 70),
-              CircleAvatar(
-                radius: 80,
-                child: Image.asset("images/BlastyyLogo.jpeg"),
+              const SizedBox(height: 150),
+              Text(
+                'MY_PARKING',
+                style: TextStyle(fontSize: 30),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 90),
               Form(
                 autovalidateMode: AutovalidateMode.always,
                 key: _formKey,
@@ -89,12 +89,17 @@ class _SignUpState extends State<SignUp> {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.purple)),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           final name = _userName.text;
                           final email = _emailController.text;
                           final password = _passwordController.text;
-                          final url = Uri.parse('http://10.99.8.34:5000/user');
+                          // final url = Uri.parse('http://10.99.8.34:5000/user');
+                          final url =
+                              Uri.parse('http://192.168.1.17:5000/user');
                           final response = await http.post(
                             url,
                             headers: {
@@ -148,7 +153,7 @@ class _SignUpState extends State<SignUp> {
                             "Login",
                             style: TextStyle(
                               fontSize: 16,
-                              color: Colors.blue,
+                              color: Colors.purple,
                               decoration: TextDecoration.underline,
                             ),
                           ),
